@@ -17,58 +17,76 @@
 </head>
 
 <body>
+    <div class="container" id="todoConteudo">
 
-
-    <div class="container-sm  mt-5 ">
-        <h1 class="text-center mb-4">Cadastro de Usuários</h1>
+    </div>
+    <div class="container  mt-5 containers">
+        <h1 class="text-center mb-4 fw-bold">CADASTRO DE CONTATOS</h1>
         <form id="formCadastro" class="mb-4">
-            <label for="nome" class="form-label">Nome</label>
-            <input type="text" class="form-control" id="nome" placeholder="Digite o nome" required>
-            <label for="cpf" class="form-label">CPF</label>
-            <input type="text" class="form-control" id="cpf" placeholder="Digite o CPF" required>
-            <label for="dataNascimento" class="form-label">Data de Nascimento</label>
+            <h4 class="mt-1 fw-bolder">DADOS PESSOAIS</h4>
+            <label for="nome" class="fw-bold form-label mb-3">Nome</label>
+            <input type="text" class="form-control mb-3" id="nome" placeholder="Digite o nome" required>
+            <label for="cpf" class="form-label fw-bold mb-3">CPF</label>
+            <input type="text" class="form-control mb-3" id="cpf" placeholder="Digite o CPF" maxlength="14" required>
+            <label for="dataNascimento" class="form-label fw-bold mb-3">Data de Nascimento</label>
             <input type="date" class="form-control" id="dataNascimento" required>
-            <div class="grid mt-3" style="--bs-rows: 2; --bs-columns: 12; --bs-gap: 0px 5px;">
+            <!-- COMEÇO DE ENDEREÇO -->
+            <h4 class="mt-5 fw-bolder">ENDEREÇO</h4>
+            <div class="grid mt-3 mb-3" style="--bs-rows: 2; --bs-columns: 12; --bs-gap: 0px 5px;">
                 <!-- 12 ESPAÇAMENTOS -->
                 <!-- PRIMEIRA LINHA DO ENDEREÇO-->
-
                 <label for="cep" class="form-label fw-bold g-col-2" style="grid-row:1;">CEP:</label>
-                <label for="logradouro" class="form-label fw-bold g-col-6 g-start-4" style="grid-row:1;">Logradouro:</label>
+                <label for="logradouro" class="form-label fw-bold g-col-6 g-start-4"
+                    style="grid-row:1;">Logradouro:</label>
                 <label for="numero" class="form-label g-col-3 fw-bold g-start-10" style="grid-row:1;">Nº:</label>
                 <!-- SEGUNDA LINHA DO ENDEREÇO-->
-                <input type="text" id="cep" class="form-control g-col-2" style="grid-row:2;" placeholder="Digite o CEP (xxxxx-xxx)" maxlength="9" required />
-                <input type="text" id="logradouro" class="form-control g-col-6 g-start-4" style="grid-row:2;" placeholder="Av/Rua" required />
-                <input type="text" id="numero" class="form-control g-col-3 g-start-10" style="grid-row:2;" placeholder="Número" maxlength="9" required />
+                <input type="text" id="cep" class="form-control g-col-2" style="grid-row:2;"
+                    placeholder="Digite o CEP (xxxxx-xxx)" maxlength="9" required />
+                <input type="text" id="logradouro" class="form-control g-col-6 g-start-4" style="grid-row:2;"
+                    placeholder="Av/Rua" required />
+                <input type="text" id="numero" class="form-control g-col-3 g-start-10" style="grid-row:2;"
+                    placeholder="Número" maxlength="10" />
             </div>
-            <div class="grid mt-3" style="--bs-rows: 2; --bs-columns: 12; --bs-gap: 0px 5px; border:1px solid red;">
+            <div class="grid mb-3" style="--bs-rows: 2; --bs-columns: 12; --bs-gap: 0px 5px;">
                 <!-- TERCEIRA LINHA DO ENDEREÇO-->
                 <label for="bairro" class="form-label fw-bold g-col-6" style="grid-row:1;">Bairro:</label>
                 <label for="estados" class="form-label g-col-1 fw-bold g-start-8" style="grid-row:1;">Estado:</label>
                 <label for="cidades" class="form-label g-col-3 fw-bold g-start-10" style="grid-row:1;">Cidade:</label>
                 <!-- QUARTA LINHA DO ENDEREÇO-->
-                <input type="text" id="bairro" class="form-control g-col-6" style="grid-row:2;" placeholder="Bairro" required/>
-                <select type="text" id="estados" class="form-select g-col-1 g-start-8" style="grid-row:2;"  required></select>
-                <select type="text" id="cidades" class="form-select g-col-3 g-start-10" style="grid-row:2;" placeholder="Cidade" required></select>
+                <input type="text" id="bairro" class="form-control g-col-6" style="grid-row:2;" placeholder="Bairro"
+                    required />
+                <select type="text" id="estados" class="form-select g-col-1 g-start-8" style="grid-row:2;"
+                    required></select>
+                <select type="text" id="cidades" class="form-select g-col-3 g-start-10" style="grid-row:2;"
+                    placeholder="Cidade" required></select>
 
             </div>
             <button type="submit" class="btn btn-primary">Cadastrar</button>
         </form>
-        <div class="mb-3">
-            <button class="btn btn-success me-2" id="btnExibirContatos">Exibir Contatos</button>
-            <button class="btn btn-info me-2" id="btnBuscarContato">Buscar Contato</button>
-            <button class="btn btn-danger" id="btnExcluirContato">Excluir Contato</button>
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <input type="checkbox" class="btn-check" id="exibirContatos" autocomplete="off">
+            <label class="btn btn-outline-primary" for="exibirContatos">Exibir Contatos</label>
+            <button type="button" id="buscarContato" class="btn btn-primary">Buscar Contato</button>
+            <button type="button" id="excluirContato" class="btn btn-danger">Exlcuir Contato</button>
         </div>
-        <script src="./scripts/script.js"></script>
-        <script>
-            const campoData = document.querySelector("#dataNascimento");
 
-            campoData.addEventListener("input", (event) => {
-                // Se o campo estiver vazio, remova qualquer valor inválido
-                if (!event.target.value) {
-                    event.target.value = '';
-                }
-            });
-        </script>
+    </div>
+
+    <div class="container containers mt-4"  id="contatosCards">
+    </div>
+
+    <script src="./scripts/script.js"></script>
+    <script src="./scripts/scriptButoes.js"></script>
+    <script>
+        const campoData = document.querySelector("#dataNascimento");
+
+        campoData.addEventListener("input", (event) => {
+            // Se o campo estiver vazio, remova qualquer valor inválido
+            if (!event.target.value) {
+                event.target.value = '';
+            }
+        });
+    </script>
 </body>
 
 </html>

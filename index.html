@@ -17,9 +17,6 @@
 </head>
 
 <body>
-    <div class="container" id="todoConteudo">
-
-    </div>
     <div class="container  mt-5 containers">
         <h1 class="text-center mb-4 fw-bold">CADASTRO DE CONTATOS</h1>
         <form id="formCadastro" class="mb-4">
@@ -45,7 +42,7 @@
                 <input type="text" id="logradouro" class="form-control g-col-6 g-start-4" style="grid-row:2;"
                     placeholder="Av/Rua" required />
                 <input type="text" id="numero" class="form-control g-col-3 g-start-10" style="grid-row:2;"
-                    placeholder="Número" maxlength="10" />
+                    placeholder="Número" maxlength="10" required/>
             </div>
             <div class="grid mb-3" style="--bs-rows: 2; --bs-columns: 12; --bs-gap: 0px 5px;">
                 <!-- TERCEIRA LINHA DO ENDEREÇO-->
@@ -72,21 +69,10 @@
 
     </div>
 
-    <div class="container containers mt-4"  id="contatosCards">
+    <div class="container containers mt-4 mb-2"  id="contatosCards">
     </div>
 
     <script src="./scripts/script.js"></script>
-    <script src="./scripts/scriptButoes.js"></script>
-    <script>
-        const campoData = document.querySelector("#dataNascimento");
-
-        campoData.addEventListener("input", (event) => {
-            // Se o campo estiver vazio, remova qualquer valor inválido
-            if (!event.target.value) {
-                event.target.value = '';
-            }
-        });
-    </script>
 </body>
 
 </html>

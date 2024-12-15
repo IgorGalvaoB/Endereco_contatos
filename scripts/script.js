@@ -201,7 +201,8 @@ cepInput.addEventListener("keypress", e => {
 ########################### BUTOES ###########################
 ##############################################################*/ 
 const contatos = [
-    {
+    //teste #####APAGAR#####
+   /*  {
         nome:"dfasdfas",
         dataNascimento: "12312",
         cpf:"12312312312",
@@ -213,12 +214,13 @@ const contatos = [
             cidade:"Natal",
             bairro:"Nova Descoberta",
         }
-    } 
+    }  */
 ]
 //ELEMENTOS COM FUNCOES:
 const formulario = document.querySelector('#formCadastro')
 const botaoExcluirContato = document.getElementById('excluirContato')
-const selectExibirContaos = document.getElementById('exibirContatos')
+const selectExibirContatos = document.getElementById('exibirContatos')
+const botaoBuscarContato = document.getElementById('buscarContato')
 const contatosCards = document.getElementById('contatosCards')
 //VALIDAR SE JA EXISTE PELO CPF
 const validarDuplicados = cpf => {
@@ -227,7 +229,7 @@ const validarDuplicados = cpf => {
 //ADIONAR CONTATO:
 const adicionarContato = () => {
     const nome = document.getElementById('nome').value.replace(/[^a-zA-Z\s]/g, '').replace(/\b\w+\b/g, nome => {
-        return nome.charAt(0).toUpperCase() + nome.slice(1).toLowerCase();
+        return nome.charAt(0).toUpperCase() + nome.slice(1).toLowerCase()
     })
     const cpf = document.getElementById('cpf').value.replace(/\D/g, '')
     const dataNascimento = document.getElementById('dataNascimento').value
@@ -284,7 +286,7 @@ const excluirContato = () => {
 }
 //EXIBIR CONTATOS:
 const exibirContatos = () => {
-    if(selectExibirContaos.checked){
+    if(selectExibirContatos.checked){
         
         contatosCards.style.display = 'block'
         contatosCards.innerHTML = ''
@@ -323,18 +325,28 @@ const exibirContatos = () => {
     
     }
 }
+//BUSCAR CONTATO:
+const buscarContato = () => {
+    const cpf = prompt('Digite o CPF do contato que deseja buscar:')
+    const contato = contatos.find(contato => contato.cpf === cpf)
+
+    if (contato) {
+        alert(`Contato encontrado: \nNome: ${contato.nome}\nCPF: ${contato.cpf}\nData de Nascimento: ${contato.dataNascimento}\nEndereço: ${contato.endereco.logradouro}, Nº: ${contato.endereco.numero}, ${contato.endereco.bairro}\nCEP:${contato.endereco.cep}\n${contato.endereco.cidade} / ${contato.endereco.estado}
+            `)
+    } else {
+        alert('Erro: CPF não encontrado!')
+    }
+}
 exibirContatos()
+//ASCULTADOR DE BUSCAR CONTATO:
+botaoBuscarContato.addEventListener('click', buscarContato)
 //AUSCULTADOR DE EXCLUIR CONTATO:
 botaoExcluirContato.addEventListener('click', excluirContato)
 //AUSCULTADOR DE EXIBIR CONTATOS:
-document.getElementById('exibirContatos').addEventListener('click', exibirContatos)
-
+selectExibirContatos.addEventListener('click', exibirContatos)
 //AUSCULTADOR DE FORM SUBMIT:
 formulario.addEventListener('submit', e => {
-    /* if (document.activeElement === cepInput) {
-        e.preventDefault()
-        console.log("Envio bloqueado porque o foco está no campo 2.")
-    } */
+
     adicionarContato()
     e.preventDefault()
     

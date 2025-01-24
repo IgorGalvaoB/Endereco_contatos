@@ -200,22 +200,6 @@ cepInput.addEventListener("keypress", e => {
 /*############################################################
 ########################### BUTOES ###########################
 ##############################################################*/ 
-const contatos = [
-    //teste #####APAGAR#####
-   /*  {
-        nome:"dfasdfas",
-        dataNascimento: "12312",
-        cpf:"12312312312",
-        endereco:{
-            logradouro:"aaa aa aaaa",
-            numero:"1231",
-            estado:"RN",
-            cep:"34243-343",
-            cidade:"Natal",
-            bairro:"Nova Descoberta",
-        }
-    }  */
-]
 //ELEMENTOS COM FUNCOES:
 const formulario = document.querySelector('#formCadastro')
 const botaoExcluirContato = document.getElementById('excluirContato')

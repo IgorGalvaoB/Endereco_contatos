@@ -1,6 +1,6 @@
 # Cadastro de Contatos
 
-Este é um projeto simples de cadastro de endereços de contatos. O sistema permite que o usuário registre informações de contatos e consulte dados relacionados ao endereço, como CEP, estado e município, através de APIs públicas. Este projeto não possui persistência de dados, ou seja, os dados não são salvos após o fechamento da aplicação.
+Este é um projeto simples de cadastro de endereços de contatos. O sistema permite que o usuário registre informações de contatos e consulte dados relacionados ao endereço, como CEP, estado e município, através de APIs públicas. Este projeto não possui persistência de dados.
 
 ## Funcionalidades
 
@@ -37,6 +37,10 @@ Você pode exibir os contatos cadastrados, buscar um contato específico ou excl
 - **HTML** para estruturação do conteúdo da página.
 - **CSS** para estilização da interface.
 - **JavaScript** para lógica de funcionamento e requisições de APIs.
+
+## Página 
+
+[`Link da Pagina no Github`](`https://igorgalvaob.github.io/Endereco_contatos/`)
 
 ## Instruções de Execução
 

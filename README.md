@@ -40,7 +40,7 @@ Você pode exibir os contatos cadastrados, buscar um contato específico ou excl
 
 ## Página 
 
-[`Link da Pagina no Github`](`https://igorgalvaob.github.io/Endereco_contatos/`)
+[Link da Pagina no Github](https://igorgalvaob.github.io/Endereco_contatos/)
 
 ## Instruções de Execução
 

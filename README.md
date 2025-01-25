@@ -37,6 +37,7 @@ Você pode exibir os contatos cadastrados, buscar um contato específico ou excl
 - **HTML** para estruturação do conteúdo da página.
 - **CSS** para estilização da interface.
 - **JavaScript** para lógica de funcionamento e requisições de APIs.
+- **BootStrap** para estilização da página.
 
 ## Página 
 
